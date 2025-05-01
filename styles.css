@@ -1,16 +1,51 @@
+/*Variables*/
+:root {
+    --color-claro-fondo: #ffffff;
+    --color-claro-texto: #000000;
+
+    --color-oscuro-fondo: #1a1a1a;
+    --color-oscuro-texto: #f0f0f0;
+
+    --color-principal: #4CAF50;
+    --color-secundario: #333333;
+    --color-acento: #a5d6a7;
+}
+
+/*Estilos para el body*/
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-claro-fondo);
+    color: var(--color-claro-texto);
 }
 
-header {
-    background-color: #4CAF50;
+
+
+/* Estilos para header y footer */
+.header {
+    background-color: var(--color-principal);
     color: white;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
+.footer {
+    background-color: var(--color-secundario);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer a {
+    color: var(--color-acento);
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+
 
 nav a {
     color: white;
@@ -47,17 +82,4 @@ nav a {
     margin-top: 10px;
     cursor: pointer;
     border-radius: 4px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
-
-footer a {
-    color: #a5d6a7;
-    margin: 0 10px;
-    text-decoration: none;
 }

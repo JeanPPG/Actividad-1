@@ -19,27 +19,20 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
-.banner {
-    grid-area: banner;
-    background-color: #4CAF50;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--color-claro-fondo);
-    color: var(--color-claro-texto);
-}
-
-
-
 /* Estilos para header y footer */
 .header {
+    grid-area: banner;
     background-color: var(--color-principal);
-    color: white;
+    color: var(--color-claro-texto);
     padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .footer {
+    grid-area: footer;
     background-color: var(--color-secundario);
     color: white;
     text-align: center;
@@ -111,20 +104,8 @@ nav a {
     border-radius: 4px;
 }
 
-.footer {
-    grid-area: footer;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
 
-.footer a {
-    
-    color: #a5d6a7;
-    margin: 0 10px;
-    text-decoration: none;
-}
+
 
 /* Media para móviles: distribución en una sola columna */
 @media (max-width: 600px) {

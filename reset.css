@@ -1,5 +1,23 @@
+/* reset.css */
+
+/* 1) Reiniciar márgenes y padding por defecto */
 * {
     margin: 0;
     padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+/* 2) Incluir paddings y borders dentro de width/height */
+*, *::before, *::after {
     box-sizing: border-box;
-  }
+}
+
+/* 3) Normalizar estilos de listas y enlaces */
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}

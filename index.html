@@ -3,7 +3,8 @@
 <head>
     <title>Laboratorio 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -15,35 +16,44 @@
             <a href="#">Productos</a>
             <a href="#">Contacto</a>
         </nav>
+        <!-- BOTÓN PARA CAMBIAR TEMA -->
+        <button id="theme-toggle" aria-label="Cambiar modo claro/oscuro">
+            🌙
+        </button>
     </header>
 
     <main class="product-grid">
         <div class="product-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBlS5npFjJKAStPatO0ykTPVnn9UR16TtzHg&s" alt="Mermelada de Fresa">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBlS5npFjJKAStPatO0ykTPVnn9UR16TtzHg&s"
+                alt="Mermelada de Fresa">
             <h3>Mermelada de Fresa</h3>
             <p>$5 USD</p>
             <button class="buy-button">Comprar</button>
         </div>
         <div class="product-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKTJz3Pv7tHqRhM6j4aJ_STBHdXN6ATSSumw&s" alt="Miel Orgánica">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKTJz3Pv7tHqRhM6j4aJ_STBHdXN6ATSSumw&s"
+                alt="Miel Orgánica">
             <h3>Miel Orgánica</h3>
             <p>$8 USD</p>
             <button class="buy-button">Comprar</button>
         </div>
         <div class="product-card">
-            <img src="https://cdn-geocp.nitrocdn.com/fDFrSSYWfGItWOEZGsrBIHnCqgylYQCG/assets/images/optimized/rev-131b604/www.nutrioli.com/wp-content/uploads/2023/02/Horizontal-2-scaled.jpg" alt="Aceite de Oliva Extra Virgen">
+            <img src="https://cdn-geocp.nitrocdn.com/fDFrSSYWfGItWOEZGsrBIHnCqgylYQCG/assets/images/optimized/rev-131b604/www.nutrioli.com/wp-content/uploads/2023/02/Horizontal-2-scaled.jpg"
+                alt="Aceite de Oliva Extra Virgen">
             <h3>Aceite de Oliva Extra Virgen</h3>
             <p>$12 USD</p>
             <button class="buy-button">Comprar</button>
         </div>
         <div class="product-card">
-            <img src="https://i0.wp.com/goula.lat/wp-content/uploads/2021/09/proeso-de-evaluacion-quesos.jpg?resize=980%2C656&ssl=1" alt="Queso Artesanal">
+            <img src="https://i0.wp.com/goula.lat/wp-content/uploads/2021/09/proeso-de-evaluacion-quesos.jpg?resize=980%2C656&ssl=1"
+                alt="Queso Artesanal">
             <h3>Queso Artesanal</h3>
             <p>$7 USD</p>
             <button class="buy-button">Comprar</button>
         </div>
         <div class="product-card">
-            <img src="https://www.infobae.com/resizer/v2/PK77XOCX4ZAVFI5AUF3DZRBJNY.jpg?auth=76e68dbb00155c439af1eac05a63dda69fdeef55b11e7a7a33353066e2844d20&smart=true&width=350&height=197&quality=85" alt="Pan Integral Casero">
+            <img src="https://www.infobae.com/resizer/v2/PK77XOCX4ZAVFI5AUF3DZRBJNY.jpg?auth=76e68dbb00155c439af1eac05a63dda69fdeef55b11e7a7a33353066e2844d20&smart=true&width=350&height=197&quality=85"
+                alt="Pan Integral Casero">
             <h3>Pan Integral Casero</h3>
             <p>$4 USD</p>
             <button class="buy-button">Comprar</button>
@@ -55,13 +65,15 @@
             <button class="buy-button">Comprar</button>
         </div>
         <div class="product-card">
-            <img src="https://rosendoguaman.com.ec/wp-content/uploads/2023/06/7861006420598chocolateambatenoamargo100gr.png" alt="Chocolate Artesanal">
+            <img src="https://rosendoguaman.com.ec/wp-content/uploads/2023/06/7861006420598chocolateambatenoamargo100gr.png"
+                alt="Chocolate Artesanal">
             <h3>Chocolate de Ambato</h3>
             <p>$6 USD</p>
             <button class="buy-button">Comprar</button>
         </div>
         <div class="product-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKaGWkOybzDLVxQzePIS75qU1cPG_whlGW4g&s" alt="Velas Aromáticas">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKaGWkOybzDLVxQzePIS75qU1cPG_whlGW4g&s"
+                alt="Velas Aromáticas">
             <h3>Velas Aromáticas</h3>
             <p>$4.50 USD</p>
             <button class="buy-button">Comprar</button>
@@ -77,6 +89,23 @@
         <p>Integrantes del grupo: Peñaranda Jean, Ortega David, Gonzalez Cesar, Teneguzñay David</p>
     </footer>
 
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle'); // Obtener referencia al botón que alterna el tema
+        const body = document.body; // Obtener referencia al elemento <body> para aplicar la clase de tema
+      
+        //Al cargar la página, comprobar si hay una preferencia guardada en localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+          body.classList.add('dark-mode'); //Si la preferencia es "dark", añadir la clase .dark-mode al <body>
+          toggleBtn.textContent = '☀️'; //Cambiar el texto del botón para mostrar el icono de sol
+        }
+      
+        //Escuchar el evento 'click' sobre el botón de alternancia
+        toggleBtn.addEventListener('click', () => {
+          const isDark = body.classList.toggle('dark-mode');//Alternar la clase .dark-mode en el <body>, y guardar el estado resultante          
+          toggleBtn.textContent = isDark ? '☀️' : '🌙'; //Según el nuevo estado, actualizar el icono del botón (luna o sol)
+          localStorage.setItem('theme', isDark ? 'dark' : 'light'); //Guardar la preferencia actual en localStorage ('dark' o 'light')
+        });
+      </script>
 </body>
 
 </html>

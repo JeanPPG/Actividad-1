@@ -1,5 +1,6 @@
 /* Estilo general del body con grid */
-/*Variables*/
+
+/* Variables de tema */
 :root {
     --color-claro-fondo: #ffffff;
     --color-claro-texto: #000000;
@@ -12,45 +13,72 @@
     --color-acento: #a5d6a7;
 }
 
-/*Estilos para el body*/
+/* Tipografía base */
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-claro-texto);
+    background-color: var(--color-claro-fondo);
+
+    /* Layout general: grid principal */
     display: grid;
-    grid-template-areas: "banner" "productos" "footer";
+    grid-template-areas:
+        "banner"
+        "productos"
+        "footer";
     grid-template-rows: auto 1fr auto;
 }
 
-/* Estilos para header y footer */
+/* Header */
 .header {
     grid-area: banner;
     background-color: var(--color-principal);
     color: var(--color-claro-texto);
     padding: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+
+/* Footer */
 .footer {
     grid-area: footer;
     background-color: var(--color-secundario);
-    color: white;
+    color: var(--color-oscuro-texto);
     text-align: center;
     padding: 1rem;
 }
 
 .footer a {
     color: var(--color-acento);
-    margin: 0 10px;
-    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: var(--color-principal);
+}
+
+/* Tema oscuro */
+/* Por defecto usamos las variables de :root (modo claro) */
+/* Cuando el <body> tenga la clase .dark-mode, intercambiamos colores */
+body.dark-mode {
+    background-color: var(--color-oscuro-fondo);
+    color: var(--color-oscuro-texto);
+}
+
+/* Sobrescribir variables en modo oscuro */
+body.dark-mode {
+    --color-claro-fondo: var(--color-oscuro-fondo);
+    --color-claro-texto: var(--color-oscuro-texto);
 }
 
 
 
+/* Nav interno */
 nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
+    margin: 0 0.5rem;
+    font-weight: 500;
 }
 
 /*Estilo para el grid principal de productos*/

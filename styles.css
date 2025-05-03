@@ -10,7 +10,7 @@
 
     --color-principal: #4CAF50;
     --color-secundario: #333333;
-    --color-acento: #a5d6a7;
+    --color-acento: #1a7e1e;
 }
 
 /* Tipografía base */
@@ -122,17 +122,24 @@ nav a {
     font-weight: 400;
 }
 
-.buy-button {
-    background-color: #4CAF50;
+.btn-comprar {
+    background-color: var(--color-acento);
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    margin-top: 10px;
-    cursor: pointer;
+    padding: 0.75rem 1.5rem;
     border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
+.btn-comprar:hover {
+    background-color: white;
+    color: var(--color-acento);
+}
 
+.btn-comprar:active {
+    transform: scale(1.05);
+}
 
 
 /* Media para móviles: distribución en una sola columna */

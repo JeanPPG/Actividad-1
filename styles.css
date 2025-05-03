@@ -30,13 +30,25 @@ body {
 
 /* Header */
 .header {
+    display: flex;
     grid-area: banner;
     background-color: var(--color-principal);
     color: var(--color-claro-texto);
-    padding: 1rem;
+    padding: 1rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/*Contenedor hero*/
+.hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -94,17 +106,35 @@ nav a {
 }
 
 .product-card {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+    position: relative;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1rem;
     text-align: center;
 }
 
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
 .product-card img {
+    display: block;
     width: 100%;
     height: 150px;
     object-fit: cover;
     border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: filter 0.3s ease;/*transicion para pasar a hover*/
+    max-width: 100%;
+}
+
+/*Estilo al pasar el mouse por la imagen*/
+.product-card img:hover {
+    filter: brightness(1.2);
 }
 
 /* Estilo para el título de la tarjeta del producto */

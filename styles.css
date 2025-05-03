@@ -31,6 +31,7 @@ body {
 /* Header */
 .header {
     display: flex;
+    position: relative;
     grid-area: banner;
     background-color: var(--color-principal);
     color: var(--color-claro-texto);
@@ -40,10 +41,17 @@ body {
     align-items: center;
 }
 
+.desktop-menu {
+    margin-left: auto;
+}
+
+#theme-toggle {
+    margin-left: 1.5rem;
+}
+
 /*Contenedor hero*/
 .hero {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 300px;
     padding: 0.5rem;
     display: flex;
     justify-content: center;
@@ -173,7 +181,27 @@ nav a {
 
 
 /* Media para móviles: distribución en una sola columna */
+
+@media (min-width: 601px) {
+    .mobile-toggle,
+    .mobile-menu {
+      display: none;
+    }
+}
+
 @media (max-width: 600px) {
+    .desktop-menu {
+        display: none;
+        margin: 0 0.5rem;
+        font-weight: 500;
+    }
+    .mobile-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
     body{
         grid-template-rows: auto 1fr auto;
         grid-template-columns: 1fr; /* Una sola columna */
@@ -190,4 +218,31 @@ nav a {
     .product-card p {
         font-size: 0.9rem; /* Ajuste de tamaño para pantallas pequeñas */
     }
+}
+
+/*Estilos menu movil*/
+.mobile-menu {
+    position: absolute;           /* Se superpone al contenido */
+    top: 100%;                    /* Bajo el header */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-principal);
+    overflow: hidden;             /* Oculta lo que sobrepase */
+    max-height: 0;                /* Cerrado por defecto */
+    transition: max-height 0.3s ease;
+    z-index: 1000;                /* Siempre arriba */
+}
+.mobile-menu.open {
+    max-height: 200px;            /* Altura al desplegar (ajusta según enlaces) */
+}
+.mobile-menu a {
+    display: block;
+    padding: 1rem;
+    color: var(--color-claro-texto);
+    text-decoration: none;
+}
+.mobile-menu a:hover,
+.mobile-menu a:focus {
+    background-color: var(--color-acento);
+    outline: none;
 }

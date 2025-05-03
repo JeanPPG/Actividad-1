@@ -10,12 +10,19 @@
 <body>
 
     <header class="banner header">
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Abrir menú móvil">☰</button>
         <div class="hero"><strong>🛒 Mercado LocalOnline</strong></div>
-        <nav>
+        <nav class="desktop-menu">
             <a href="#">Inicio</a>
             <a href="#">Productos</a>
             <a href="#">Contacto</a>
         </nav>
+        <!-- Menú móvil (inicialmente oculto) -->
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Contacto</a>
+        </div>
         <!-- BOTÓN PARA CAMBIAR TEMA -->
         <button id="theme-toggle" aria-label="Cambiar modo claro/oscuro">
             🌙
@@ -90,6 +97,16 @@
     </footer>
 
     <script>
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu   = document.getElementById('mobile-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            const expanded = mobileMenu.classList.contains('open');
+            mobileToggle.setAttribute('aria-label',
+            expanded ? 'Cerrar menú móvil' : 'Abrir menú móvil'
+        );
+        });
         const toggleBtn = document.getElementById('theme-toggle'); // Obtener referencia al botón que alterna el tema
         const body = document.body; // Obtener referencia al elemento <body> para aplicar la clase de tema
       
